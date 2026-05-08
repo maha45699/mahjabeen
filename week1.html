@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beautiful Animated Nature Scene</title>
+
+<style>
+
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#d6f0ff;
+}
+
+.scene{
+    position:relative;
+    width:900px;
+    height:500px;
+    overflow:hidden;
+    border:4px solid black;
+    background:linear-gradient(to bottom,#87CEEB 65%, #32CD32 35%);
+}
+
+/* SUN */
+
+.sun{
+    position:absolute;
+    width:90px;
+    height:90px;
+    background:yellow;
+    border-radius:50%;
+    top:40px;
+    left:60px;
+    box-shadow:0 0 40px yellow;
+    animation:sun 4s infinite alternate;
+}
+
+@keyframes sun{
+    from{transform:translateY(0);}
+    to{transform:translateY(15px);}
+}
+
+/* CLOUDS */
+
+.cloud{
+    position:absolute;
+    width:120px;
+    height:60px;
+    background:white;
+    border-radius:50px;
+    top:70px;
+    animation:cloudmove 20s linear infinite;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    background:white;
+    border-radius:50%;
+}
+
+.cloud::before{
+    width:50px;
+    height:50px;
+    top:-20px;
+    left:15px;
+}
+
+.cloud::after{
+    width:60px;
+    height:60px;
+    top:-25px;
+    right:15px;
+}
+
+.cloud1{
+    left:-150px;
+}
+
+.cloud2{
+    top:130px;
+    left:-300px;
+    animation-duration:25s;
+}
+
+@keyframes cloudmove{
+    from{transform:translateX(0);}
+    to{transform:translateX(1200px);}
+}
+
+/* HOUSE */
+
+.house{
+    position:absolute;
+    bottom:90px;
+    left:340px;
+}
+
+.roof{
+    width:0;
+    height:0;
+    border-left:100px solid transparent;
+    border-right:100px solid transparent;
+    border-bottom:100px solid darkred;
+    position:absolute;
+    top:-95px;
+    left:-10px;
+}
+
+.base{
+    width:180px;
+    height:140px;
+    background:#c0392b;
+    position:relative;
+}
+
+.door{
+    width:40px;
+    height:70px;
+    background:black;
+    position:absolute;
+    bottom:0;
+    left:70px;
+}
+
+.window{
+    width:30px;
+    height:30px;
+    background:white;
+    position:absolute;
+    top:35px;
+}
+
+.window1{
+    left:20px;
+}
+
+.window2{
+    right:20px;
+}
+
+/* TREES */
+
+.tree{
+    position:absolute;
+    bottom:90px;
+}
+
+.tree1{
+    left:120px;
+}
+
+.tree2{
+    right:120px;
+}
+
+.trunk{
+    width:30px;
+    height:100px;
+    background:#6b3e26;
+    margin:auto;
+}
+
+.leaves{
+    width:100px;
+    height:100px;
+    background:green;
+    border-radius:50%;
+    position:relative;
+    bottom:-10px;
+    animation:shake 3s infinite alternate;
+}
+
+@keyframes shake{
+    from{transform:rotate(-2deg);}
+    to{transform:rotate(2deg);}
+}
+
+/* FLOWERS */
+
+.flower{
+    position:absolute;
+    bottom:40px;
+}
+
+/* STEM */
+
+.stem{
+    width:4px;
+    height:40px;
+    background:green;
+    margin:auto;
+}
+
+/* PETALS */
+
+.petals{
+    position:relative;
+    width:20px;
+    height:20px;
+    background:pink;
+    border-radius:50%;
+    margin:auto;
+    top:-5px;
+    box-shadow:
+    20px 0 pink,
+    -20px 0 pink,
+    0 20px pink,
+    0 -20px pink;
+}
+
+.petals::after{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:14px;
+    background:yellow;
+    border-radius:50%;
+    top:3px;
+    left:3px;
+}
+
+.f1{
+    left:220px;
+}
+
+.f2{
+    left:650px;
+}
+
+.f3{
+    left:760px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+    <!-- SUN -->
+    <div class="sun"></div>
+
+    <!-- CLOUDS -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+
+    <!-- HOUSE -->
+    <div class="house">
+        <div class="roof"></div>
+
+        <div class="base">
+            <div class="window window1"></div>
+            <div class="window window2"></div>
+            <div class="door"></div>
+        </div>
+    </div>
+
+    <!-- TREE LEFT -->
+    <div class="tree tree1">
+        <div class="leaves"></div>
+        <div class="trunk"></div>
+    </div>
+
+    <!-- TREE RIGHT -->
+    <div class="tree tree2">
+        <div class="leaves"></div>
+        <div class="trunk"></div>
+    </div>
+
+    <!-- FLOWER 1 -->
+    <div class="flower f1">
+        <div class="petals"></div>
+        <div class="stem"></div>
+    </div>
+
+    <!-- FLOWER 2 -->
+    <div class="flower f2">
+        <div class="petals"></div>
+        <div class="stem"></div>
+    </div>
+
+    <!-- FLOWER 3 -->
+    <div class="flower f3">
+        <div class="petals"></div>
+        <div class="stem"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
